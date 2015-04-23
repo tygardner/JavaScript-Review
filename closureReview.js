@@ -9,9 +9,9 @@ var callFriend = function(){
 //Above you're given a callFriend function that returns another function. 
 //Do what you need to do in order to call your function and get 'Calling Jake at 435-215-9248' in your console.
 
-  //code here
+var calling = callFriend();
 
-
+calling('435-215-9248')
 
 /*
 
@@ -20,3 +20,31 @@ Write a function that accepts a function as it's first argument and returns a ne
 Once completed, add a second arguments that allows the function to be executed N number of times. After the function has been called N number of times, console.log('STAHHP');
 
 */
+ 
+var fn = fucntion(cb){
+	var count = 0
+	return function(){
+		if(count === 0){
+			cb()
+			count ++;
+		}
+	}
+}
+var newFn = fn(function()){
+	alert("Wooo")
+})
+
+var fn = function(cb, num) {
+	var count = 0
+		return function(){
+			if(count < num){
+				cb()
+					count++;
+			} else {
+				console.log('Stahhp')
+			}
+		}
+	}
+	var newFn = fn(function()) {
+		console.log('Wooo')
+}, 5

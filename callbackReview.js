@@ -1,6 +1,8 @@
 /* Declare and Define the functions here that will make the function calls below work properly */
 
-
+var first = function(array, cb){
+  cb(array[0]);
+};
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 first(names, function(firstName){
@@ -12,7 +14,9 @@ first(names, function(firstName){
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
-
+var last = function(array, cb){
+  cb(array[names.length-1]);
+};
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -113,7 +117,13 @@ getUserById('16t', users, function(user){
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
-
+var find = function(arr, cb){
+  for (var i = 0; i < arr.length; i++){
+    if (cb(arr[i])){
+      return arr[i];
+    }
+  }
+};
 
 
 
